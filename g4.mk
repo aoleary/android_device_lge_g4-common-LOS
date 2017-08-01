@@ -38,3 +38,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heaptargetutilization=0.8 \
     dalvik.vm.heapminfree=2m \
     dalvik.vm.heapmaxfree=8m
+
+# Glove mode
+PRODUCT_PACKAGES += \
+    GloveMode
