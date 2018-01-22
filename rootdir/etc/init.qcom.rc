@@ -56,6 +56,14 @@ on early-fs
 
     restorecon_recursive /persist
 
+    # use qcril.db to handle Ecc and load MBN
+    mkdir /data/misc/radio
+    chown -h radio radio /data/misc/radio
+    chmod 770 /data/misc/radio
+    copy system/etc/motorola/qcril.db /data/misc/radio/qcril.db
+    chown -h radio radio /data/misc/radio/qcril.db
+    chmod 770 /data/misc/radio/qcril.db
+
     # load kernel modules
     insmod /system/lib/modules/mcDrvModule.ko
     insmod /system/lib/modules/mcKernelApi.ko
