@@ -207,7 +207,7 @@ x=1
 PRTRIGGER=0
 REQRESTART=$(getprop gsm.sim.state)
 while [ "$REQRESTART" != "READY" ];do
- 
+
     # PIN_REQUIRED means usually the user get prompted - unfortunately 
     # sometimes there is no prompt.
     # this will restart RIL not on the first but every second run only (which should be safe) and
@@ -234,4 +234,3 @@ done
 echo "$0: gsm.sim.state >$REQRESTART<" >> /dev/kmsg
 echo "$0: ended" >> /dev/kmsg
 # < END workaround
-
