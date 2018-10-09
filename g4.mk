@@ -30,7 +30,11 @@ TARGET_BOOT_ANIMATION_RES := 1440
 
 include $(LOCAL_PATH)/product/*.mk
 
-$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-dalvik-heap.mk)
-
-$(call inherit-product-if-exists, frameworks/native/build/phone-xxxhdpi-3072-hwui-memory.mk)
-
+# Dalvik heap
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=288m \
+    dalvik.vm.heapsize=768m \
+    dalvik.vm.heaptargetutilization=0.8 \
+    dalvik.vm.heapminfree=2m \
+    dalvik.vm.heapmaxfree=8m
